@@ -17,7 +17,6 @@ public class Lector {
     @Id
     private Long id;
     private String name;
-    private String lastName;
     private Integer salary;
     @ManyToOne
     private Degree degree;
