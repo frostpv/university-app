@@ -11,9 +11,9 @@ public class CommandHandler {
 
     public void runCommand (String command) {
         commandExecutorList.stream()
-                .filter(commandExecutor -> commandExecutor.isCommandValid(command))
+                .filter(commandExecutor -> commandExecutor.isCommandValid(command.toLowerCase()))
                 .findFirst()
-                .ifPresentOrElse(commandExecutor -> commandExecutor.run(command),
+                .ifPresentOrElse(commandExecutor -> commandExecutor.run(command.toLowerCase()),
                         ()-> System.out.println("Invalid command"));
     }
 }
