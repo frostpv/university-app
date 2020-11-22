@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DegreeImpl implements DegreeService {
-    private DegreeDao degreeDao;
+    private final DegreeDao degreeDao;
 
     @Override
     public void save(Degree degree) {

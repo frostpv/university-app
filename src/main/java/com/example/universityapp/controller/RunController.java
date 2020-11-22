@@ -4,16 +4,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
-@Component
 @RequiredArgsConstructor
+@Component
 public class RunController {
-    CommandHandler commandHandler;
+    private final CommandHandler commandHandler;
     public void run() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String line = scanner.nextLine();
             if (line.equalsIgnoreCase("quit")) {
-                System.exit(0);
+                System.out.println("xxx");
             } else {
                 commandHandler.runCommand(line);
             }

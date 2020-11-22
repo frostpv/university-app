@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class LectorServiceImpl implements LectorService {
-    private LectorDao lectorDao;
+    private final LectorDao lectorDao;
 
     @Override
     public void save(Lector lector) {

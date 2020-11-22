@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
-    private DepartmentDao departmentDao;
+    private final DepartmentDao departmentDao;
     @Override
     public void save(Department department) {
         departmentDao.save(department);
@@ -17,6 +17,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Department findByDepartmentNameIgnoreCase(String departmentName) {
-        return departmentDao.findByDepartmentNameIgnoreCase(departmentName);
+       return departmentDao.findByDepartmentNameIgnoreCase(departmentName);
     }
 }
