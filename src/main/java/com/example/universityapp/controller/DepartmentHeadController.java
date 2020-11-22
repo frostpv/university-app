@@ -3,10 +3,11 @@ package com.example.universityapp.controller;
 import com.example.universityapp.model.Lector;
 import com.example.universityapp.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
-@Component
+@Service("test")
 @RequiredArgsConstructor
 public class DepartmentHeadController implements CommandExecutor {
     private final DepartmentService departmentService;
