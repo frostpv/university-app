@@ -10,7 +10,7 @@ import java.util.Optional;
 @Component
 public class DepartmentHeadController implements CommandExecutor {
     private final DepartmentService departmentService;
-    private static final String DEPARTMENT_HEAD_COMMAND = "Who is head of department";
+    private static final String DEPARTMENT_HEAD_COMMAND = "who is head of department";
 
     @Override
     public void run(String command) {
