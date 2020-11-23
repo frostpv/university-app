@@ -10,7 +10,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Component
 public class AverageSalaryController implements CommandExecutor{
-    private static final String AVERAGE_SALARY_COMMAND = "Show the average salary for the department";
+    private static final String AVERAGE_SALARY_COMMAND = "show the average salary for the department";
     private final DepartmentService departmentService;
 
     @Override
