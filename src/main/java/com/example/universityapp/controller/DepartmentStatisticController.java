@@ -7,16 +7,15 @@ import com.example.universityapp.model.Role;
 import com.example.universityapp.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 @RequiredArgsConstructor
 @Component
-public class DepartmentStatistic implements CommandExecutor {
+public class DepartmentStatisticController implements CommandExecutor {
     private static final String STATISTIC_COMMAND_SHOW = "show";
     private static final String STATISTIC_COMMAND_STATISTICS = "statistics";
     private final DepartmentService departmentService;
