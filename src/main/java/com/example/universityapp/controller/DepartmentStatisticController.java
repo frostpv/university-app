@@ -40,7 +40,7 @@ public class DepartmentStatisticController implements CommandExecutor {
             } else {
                 StringBuilder result = new StringBuilder();
                 for (Map.Entry<Role, Long> roleLongEntry : rolesCountMap.entrySet()) {
-                    result.append("/n")
+                    result.append("\n")
                             .append(roleToString(roleLongEntry.getKey()))
                             .append(" - ")
                             .append(roleLongEntry.getValue());
