@@ -3,9 +3,9 @@ package com.example.universityapp.service.impl;
 import com.example.universityapp.model.Lector;
 import com.example.universityapp.repository.LectorDao;
 import com.example.universityapp.service.LectorService;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class LectorServiceImpl implements LectorService {
 
     @Override
     public List<Lector> findLectorsByNameContainsIgnoreCase(String template) {
-       return lectorDao.findLectorsByNameContainsIgnoreCase(template);
+        return lectorDao.findLectorsByNameContainsIgnoreCase(template);
     }
 
     @Override

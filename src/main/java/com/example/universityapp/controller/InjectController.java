@@ -7,15 +7,14 @@ import com.example.universityapp.model.Role;
 import com.example.universityapp.service.DegreeService;
 import com.example.universityapp.service.DepartmentService;
 import com.example.universityapp.service.LectorService;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RequiredArgsConstructor
 @Component
-public class InjectController implements CommandExecutor{
+public class InjectController implements CommandExecutor {
     private static final String INJECT_COMMAND = "inject";
     private final DepartmentService departmentService;
     private final DegreeService degreeService;

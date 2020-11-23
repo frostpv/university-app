@@ -5,13 +5,12 @@ import com.example.universityapp.model.Department;
 import com.example.universityapp.model.Lector;
 import com.example.universityapp.model.Role;
 import com.example.universityapp.service.DepartmentService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
@@ -26,7 +25,8 @@ public class DepartmentStatisticController implements CommandExecutor {
                 .replaceAll(STATISTIC_COMMAND_STATISTICS, "")
                 .trim();
         Optional<Department> departmentOptional =
-                Optional.ofNullable(departmentService.findByDepartmentNameIgnoreCase(departmentName));
+                Optional.ofNullable(departmentService
+                        .findByDepartmentNameIgnoreCase(departmentName));
         if (departmentOptional.isPresent()) {
             Map<Role, Long> rolesCountMap = departmentOptional.stream()
                     .map(Department::getLectorList)

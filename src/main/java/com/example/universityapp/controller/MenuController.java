@@ -3,7 +3,7 @@ package com.example.universityapp.controller;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MenuController implements CommandExecutor{
+public class MenuController implements CommandExecutor {
     private static final String HELP_COMMAND = "help";
     private static final String COMMANDS_MENU = "\n List of command: "
             + "\n 1. Who is head of department {department_name}\""

@@ -2,13 +2,13 @@ package com.example.universityapp.controller;
 
 import com.example.universityapp.model.Department;
 import com.example.universityapp.service.DepartmentService;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Component
-public class CountEmployeeController implements  CommandExecutor{
+public class CountEmployeeController implements CommandExecutor {
     private static final String COUNT_OF_EMPLOYEE_COMMAND = "show count of employee for";
     private final DepartmentService departmentService;
 
@@ -16,8 +16,9 @@ public class CountEmployeeController implements  CommandExecutor{
     public void run(String command) {
         String departmentName = command.replaceAll(COUNT_OF_EMPLOYEE_COMMAND, "").trim();
         Optional<Department> departmentOptional
-                = Optional.ofNullable(departmentService.findByDepartmentNameIgnoreCase(departmentName));
-        if(departmentOptional.isPresent()) {
+                = Optional.ofNullable(departmentService
+                .findByDepartmentNameIgnoreCase(departmentName));
+        if (departmentOptional.isPresent()) {
             System.out.println(departmentOptional.get().getLectorList().size());
         } else {
             System.out.println("Invalid name of department " + departmentName);

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Main implements CommandLineRunner {
     private final RunController runController;
+
     @Override
     public void run(String... args) throws Exception {
         runController.run();

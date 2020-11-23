@@ -1,8 +1,8 @@
 package com.example.universityapp.controller;
 
+import java.util.Scanner;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import java.util.Scanner;
 
 @RequiredArgsConstructor
 @Component
@@ -14,6 +14,7 @@ public class RunController {
         while (true) {
             String line = scanner.nextLine();
             if (line.equalsIgnoreCase("quit")) {
+                System.exit(0);
             } else {
                 commandHandler.runCommand(line);
             }
