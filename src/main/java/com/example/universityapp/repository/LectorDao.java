@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface LectorDao extends JpaRepository <Lector, Long> {
-    List<Lector> findLecturersByNameContains(String template);
+    List<Lector> findLectorsByNameContainsIgnoreCase(String template);
 
     Lector findByName(String name);
 }

@@ -18,8 +18,8 @@ public class LectorServiceImpl implements LectorService {
     }
 
     @Override
-    public List<Lector> findLecturersByNameContains(String template) {
-       return lectorDao.findLecturersByNameContains(template);
+    public List<Lector> findLectorsByNameContainsIgnoreCase(String template) {
+       return lectorDao.findLectorsByNameContainsIgnoreCase(template);
     }
 
     @Override

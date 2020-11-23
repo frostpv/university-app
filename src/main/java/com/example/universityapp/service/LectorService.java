@@ -7,7 +7,7 @@ import java.util.List;
 public interface LectorService {
     void save(Lector lector);
 
-    List<Lector> findLecturersByNameContains(String template);
+    List<Lector> findLectorsByNameContainsIgnoreCase(String template);
 
     Lector findByName(String name);
 }

@@ -44,8 +44,8 @@ public class DepartmentStatisticController implements CommandExecutor {
                             .append(roleToString(roleLongEntry.getKey()))
                             .append(" - ")
                             .append(roleLongEntry.getValue());
-                    System.out.println(result.toString());
                 }
+                System.out.println(result.toString());
             }
         } else {
             System.out.println("Invalid name of department: " + departmentName);

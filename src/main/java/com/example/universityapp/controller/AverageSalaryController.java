@@ -23,7 +23,7 @@ public class AverageSalaryController implements CommandExecutor{
                     .map(Lector::getSalary)
                     .mapToInt(Integer::intValue)
                     .average()
-                    .ifPresentOrElse(x-> System.out.println("The average salary of " + departmentName + " is " + x),
+                    .ifPresentOrElse(x-> System.out.println("The average salary of " + departmentName + " is " + Math.round(x*100)/100),
                             ()-> System.out.println("Does not info about average salary of " + departmentName));
         } else {
             System.out.println("Invalid name of department: " + departmentName);

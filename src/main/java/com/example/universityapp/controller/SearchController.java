@@ -15,7 +15,7 @@ public class SearchController implements CommandExecutor{
     @Override
     public void run(String command) {
         String searchWord = command.replaceAll(SEARCH_COMMAND, "").trim();
-        List<Lector> lecturersByNameContains = lectorDao.findLecturersByNameContains(searchWord);
+        List<Lector> lecturersByNameContains = lectorDao.findLectorsByNameContainsIgnoreCase(searchWord);
         if(lecturersByNameContains.size() > 0) {
             lecturersByNameContains.forEach(lector -> System.out.println(lector.getName() + ", "));
         } else {
