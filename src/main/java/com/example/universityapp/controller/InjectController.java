@@ -50,38 +50,18 @@ public class InjectController implements CommandExecutor {
         petrov.setDegree(degreeService.findByRole(Role.ASSOCIATE_PROFESSOR));
         lectorService.save(petrov);
         Lector alexandrov = new Lector();
-        alexandrov.setName("Alexandr Alexandrov");
+        alexandrov.setName("Sidor Sidorov");
         alexandrov.setSalary(3000);
         alexandrov.setDegree(degreeService.findByRole(Role.PROFESSOR));
-        lectorService.save(alexandrov);
-        Lector andreev = new Lector();
-        andreev.setName("Andrey Andreev");
-        andreev.setSalary(2000);
-        andreev.setDegree(degreeService.findByRole(Role.PROFESSOR));
-        lectorService.save(andreev);
-        Lector grigoriev = new Lector();
-        grigoriev.setName("Grigory Grigoriev");
-        grigoriev.setSalary(4000);
-        grigoriev.setDegree(degreeService.findByRole(Role.ASSISTANT));
-        lectorService.save(grigoriev);
 
-        Department law = new Department();
-        law.setDepartmentName("Law");
-        law.setHeadOfDepartment(lectorService.findByName("Alexandr Alexandrov"));
+        Department historical = new Department();
+        historical.setDepartmentName("Historical");
+        historical.setHeadOfDepartment(lectorService.findByName("Sidor Sidorov"));
         List<Lector> lawLecturers = new ArrayList<>();
-        lawLecturers.add(lectorService.findByName("Andrey Andreev"));
-        lawLecturers.add(lectorService.findByName("Grigory Grigoriev"));
-        lawLecturers.add(lectorService.findByName("Alexandr Alexandrov"));
-        law.setLectorList(lawLecturers);
-        departmentService.save(law);
-        Department economic = new Department();
-        economic.setDepartmentName("Economic");
-        economic.setHeadOfDepartment(lectorService.findByName("Petro Petrov"));
-        List<Lector> economicLecturers = new ArrayList<>();
-        economicLecturers.add(lectorService.findByName("Petro Petrov"));
-        economicLecturers.add(lectorService.findByName("Ivan Ivanov"));
-        economicLecturers.add(lectorService.findByName("Grigory Grigoriev"));
-        economic.setLectorList(economicLecturers);
-        departmentService.save(economic);
+        lawLecturers.add(lectorService.findByName("Petro Petrov"));
+        lawLecturers.add(lectorService.findByName("Ivan Ivanov"));
+        lawLecturers.add(lectorService.findByName("Sidor Sidorov"));
+        historical.setLectorList(lawLecturers);
+        departmentService.save(historical);
     }
 }
